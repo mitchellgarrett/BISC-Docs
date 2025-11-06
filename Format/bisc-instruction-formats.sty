@@ -1,0 +1,83 @@
+\ProvidesPackage{bisc-instruction-formats}
+
+\usepackage{bytefield}
+
+\newcommand{\nformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+			\bitheader[endianness=little]{0, 7, 8, 31} \\
+			\begin{leftwordgroup}{\hyperref[instruction-n-format]{\textbf{N-Type}}}
+				\bitbox{8}{#1}
+				\bitbox{24}{\textit{null}}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}
+
+\newcommand{\rformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+		\bitheader[endianness=little]{0, 7, 8, 15, 16, 31} \\
+			\begin{leftwordgroup}{\hyperref[register-r-format]{\textbf{R-Type}}}
+				\bitbox{8}{#1}
+				\bitbox{8}{rd}
+				\bitbox{16}{\textit{null}}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}
+
+\newcommand{\iformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+			\bitheader[endianness=little]{0, 7, 8, 15, 16, 31} \\
+			\begin{leftwordgroup}{\hyperref[immediate-i-format]{\textbf{I-Type}}}
+				\bitbox{8}{#1} 
+				\bitbox{8}{rd}
+				\bitbox{16}{immediate}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}
+
+\newcommand{\mformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+			\bitheader[endianness=little]{0, 7, 8, 15, 16, 23, 24, 31} \\
+			\begin{leftwordgroup}{\hyperref[memory-m-format]{\textbf{M-Type}}}
+				\bitbox{8}{#1}
+				\bitbox{8}{rd}
+				\bitbox{8}{rs}
+				\bitbox{8}{offset}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}
+
+\newcommand{\dformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+			\bitheader[endianness=little]{0, 7, 8, 15, 16, 23, 24, 31} \\
+			\begin{leftwordgroup}{\hyperref[double-register-d-format]{\textbf{D-Type}}}
+				\bitbox{8}{#1} 
+				\bitbox{8}{rd}
+				\bitbox{8}{rs}
+				\bitbox{8}{\textit{null}}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}
+
+\newcommand{\tformat}[1]{
+	\begin{center}
+		\begin{bytefield}[leftcurly=., leftcurlyspace=0pt]{32}
+			\bitheader[endianness=little]{0, 7, 8, 15, 16, 23, 24, 31} \\
+			\begin{leftwordgroup}{\hyperref[triple-register-t-format]{\textbf{T-Type}}}
+				\bitbox{8}{#1} 
+				\bitbox{8}{rd}
+				\bitbox{8}{rs\textsubscript{0}}
+				\bitbox{8}{rs\textsubscript{1}}
+			\end{leftwordgroup} \\
+		\end{bytefield}
+	\end{center}
+}

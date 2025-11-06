@@ -1,0 +1,6 @@
+Build/
+*.aux
+*.log
+*.toc
+*.out
+*.pdf

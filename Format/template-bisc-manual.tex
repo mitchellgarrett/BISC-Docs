@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{import}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{lmodern}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{amsfonts, amsmath, lmodern, iftex, listings}
+\usepackage{fancyvrb, multirow}
+\usepackage{graphicx}
+\usepackage{bookmark, xcolor, soul, geometry}
+\usepackage{setspace}
+
+$if(tables)$
+\usepackage{etoolbox}
+\usepackage{xstring}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\renewcommand{\arraystretch}{1.3}
+\makeatletter
+\patchcmd{\LT@array}{\@mkpream{#2}}{%
+\StrGobbleLeft{#2}{2}[\pream]%
+\StrGobbleRight{\pream}{2}[\pream]%
+\StrSubstitute{\pream}{l}{|l}[\pream]%
+\StrSubstitute{\pream}{c}{|c}[\pream]%
+\StrSubstitute{\pream}{r}{|r}[\pream]%
+\@mkpream{@{}\pream|@{}}%
+}{}{}
+\makeatother
+$endif$
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bisc-instruction-formats}
+
+\hypersetup{
+    linktoc=all
+}
+
+\title{
+	\textbf{$title$}\\
+	\large for version $version$
+}
+
+\author{}
+\date{$date$}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+$body$
+
+\end{document}
