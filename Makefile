@@ -14,9 +14,6 @@ tex: $(TEX_FILE)
 .PHONY: pdf
 pdf: $(TEX_FILE)
 	export TEXINPUTS+=Format//: && pdflatex -output-directory $(BUILD_DIR) $(BUILD_DIR)/bisc-manual.tex
-#	export TEXINPUTS+=Format//: && pandoc $(BUILD_DIR)/bisc-manual.tex -f latex -t pdf -o $(BUILD_DIR)/bisc-manual.pdf
-#	pdflatex -output-directory $(BUILD_DIR) $(BUILD_DIR)/bisc-manual.tex
-
 
 .PHONY: clean
 clean:

@@ -7,30 +7,30 @@
 		\hline
 		\textbf{Index} & \textbf{Register} & \textbf{Description} \\
 		\hline
-		\textit{0x00} & \texttt{pc} & Program Counter \\
+		0x00 & \texttt{pc} & Program Counter \\
 		\hline
-		\textit{0x01} & \texttt{sp} & Stack Pointer \\
+		0x01 & \texttt{sp} & Stack Pointer \\
 		\hline
-		\textit{0x02} & \texttt{gp} & Global Pointer \\
+		0x02 & \texttt{gp} & Global Pointer \\
 		\hline
-		\textit{0x03} & \texttt{fp} & Frame Pointer \\
+		0x03 & \texttt{fp} & Frame Pointer \\
 		\hline
-		\textit{0x04} & \texttt{ra} & Return Address \\
+		0x04 & \texttt{ra} & Return Address \\
 		\hline
-		\textit{0x05} & \texttt{rv} & Return Value \\
+		0x05 & \texttt{rv} & Return Value \\
 		\hline
-		\textit{0x06} & \texttt{ti} & Temporary Immediate \textit{(Used by assembler)} \\
+		0x06 & \texttt{ti} & Temporary Immediate \textit{(Used by assembler)} \\
 		\hline
-		\textit{0x07} & \texttt{ta} & Temporary Address \textit{(Used by assembler)} \\
+		0x07 & \texttt{ta} & Temporary Address \textit{(Used by assembler)} \\
 		\hline
-		\textit{0x08-0x0F} & \texttt{r0-r7} & General Purpose Registers \\
+		0x08-0x0F & \texttt{r0-r7} & General Purpose Registers \\
 		\hline
-		\textit{0x10-0x17} & \texttt{f0-f7} & General Purpose Floating Point Registers \\
+		0x10-0x17 & \texttt{f0-f7} & General Purpose Floating Point Registers \\
 		\hline
 	\end{tabular}
 \end{center}
 
-## Register Descripts
+## Register Descriptions
 
 ### Program Counter
 The Program Counter (`pc`) is a 32-bit register that stores the memory address, in bytes, of the next instruction the CPU will run.
